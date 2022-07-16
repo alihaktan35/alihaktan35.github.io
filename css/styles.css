@@ -1,4 +1,4 @@
-/* basic styles */
+/* basic styles // her css de olur */
 html {
   font-size: 100%;
   line-height: 1.5rem;
@@ -25,4 +25,66 @@ video {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* hero styles (özel oluşturduğumuz classlara çağrı) */
+
+.hero-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0px;
+  align-content: center; /* up and down */
+  justify-content: center; /* left and right için de ortaladık. */
+  align-items: start;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-image-box {
+  height: 100vh; /* vh'nin anlamı pencereye göre boyutlanması, responsive */
+  width: 100%;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.hero-image-box::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* İmajın tüm sayfayı responsive şekilde kaplamasını sağladık */
+}
+
+.hero-text-box {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  align-self: center; /* dikey olarak ortaladık */
+  text-align: center; /* yatay olarak ortaladık */
+  padding: 1rem; /* yazılar arası boşluk */
+  z-index: 10;
+}
+
+.hero-heading {
+  /* yazının rengini, fontunu, boyutunu bu css class ile ayarladık */
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+.hero-text {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: white;
 }
